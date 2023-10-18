@@ -1,0 +1,13 @@
+import dill
+from sklearn.linear_model import LogisticRegression
+
+# Créer un modèle fictif
+model = LogisticRegression()
+# Entraîner le modèle avec des données fictives
+X = [[0], [1], [2], [3]]
+y = [0, 1, 1, 0]
+model.fit(X, y)
+
+# Sauvegarder le modèle en tant que model.pkl
+with open("./Models/model.pkl", "wb") as file:
+    dill.dump(model, file)
